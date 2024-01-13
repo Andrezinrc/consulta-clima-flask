@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename="style.css") }}"></link>
+    <title>Consulta de Cidade</title>
+</head>
+<body>
+
+    <form class="formulario"  action="/" method="post">
+        <h1 class="titulo">Previsão do Tempo</h1>
+        <input class="campo-cidade" type="text" id="cidade" name="cidade" placeholder="Digite o nome da cidade" required>
+        <button class="botao" type="submit">Consultar</button>
+    </form>
+    <div class="informacoes">
+      {% if data and "name" in data %}
+        <p>Cidade: {{ data["name"] }}</p>
+        <p>Descrição: {{ data["weather"][0]["description"] }}</p>
+        <p>Temperatura: {{ "{:.0f}".format(data["main"]["temp"] - 273.15) }}ºC</p>
+        <p>Temperatura Minima: {{ "{:.0f}".format(data["main"]["temp_min"] - 273.15) }}ºC</p>
+        <p>Temperatura Maxima: {{ "{:.0f}".format(data["main"]["temp_max"] - 273.15) }}ºC</p>
+        <p>Vento: {{ data["wind"]["speed"] }} m/s, {{ data["wind"]["deg"] }}°</p>
+      {% endif %}  
+    </div>
+</body>
+</html>

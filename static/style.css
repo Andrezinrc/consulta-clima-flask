@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  background-color: #2A2A2A;
+}
+.titulo{
+  text-align: center;
+}
+.formulario{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-itens: center;
+  background-color: #656565;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.campo-cidade{
+  width: 250px;
+  height: 35px;
+  margin: 0 auto;
+}
+.botao{
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  border: 0;
+  margin: 0 auto;
+  background-color: #3D75FF;
+  color: white;
+}
+.informacoes{
+  position: absolute;
+  left: 50%;
+  top: 60vh;
+  transform: translateX(-50%);
+  background-color: #656565;
+  padding: 20px;
+  border-radius: 10px;
+}
+.informacoes p{
+  color: white;
+  white-space: nowrap;
+}
